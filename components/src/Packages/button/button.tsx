@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styled from "styled-components";
 
@@ -5,7 +6,7 @@ export interface buttonProps {
   buttonLabel?: string;
 }
 
-const customButton: React.FunctionComponent<buttonProps> = ({
+const CustomButton: React.FunctionComponent<buttonProps> = ({
   buttonLabel,
 }) => {
   return (
@@ -27,4 +28,4 @@ const Stylewrapper = styled.div`
   }
 `;
 
-export { customButton };
+export { CustomButton };

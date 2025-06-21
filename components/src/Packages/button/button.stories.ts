@@ -1,11 +1,11 @@
-import { customButton } from "../button/button";
+import { CustomButton } from "../button/button";
 
 export default {
     title: "Components/Button",
-    component: customButton,
+    component: CustomButton,
 }
 
-export const customButtons = {
+export const Button = {
     args: {
         buttonLabel: "test"
     }
