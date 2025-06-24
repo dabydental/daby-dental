@@ -19,11 +19,12 @@ const CustomButton: React.FunctionComponent<buttonProps> = ({
 const Stylewrapper = styled.div`
   &.customButton {
     button {
-      background-color: teal;
+      background-color: var(--teal);
       color: white;
       padding: 20px;
       border-radius: 10px;
       border: none;
+      font-family: var(--font-daby-dental-design);
     }
   }
 `;
