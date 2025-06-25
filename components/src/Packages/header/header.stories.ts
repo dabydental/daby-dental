@@ -8,6 +8,25 @@ export default {
 export const Header = {
     args: {
         logoAlt: "Daby Dental",
-        logoUrl: "https://res.cloudinary.com/ddslirbcf/image/upload/v1750762721/Daby_dental_logo_centered_1_gbocaa.png"
+        logoUrl: "https://res.cloudinary.com/ddslirbcf/image/upload/v1750762721/Daby_dental_logo_centered_1_gbocaa.png",
+        navProps: [
+            {
+                navName: "Home",
+                navLink: "/",
+            },
+            {
+                navName: "Our Services",
+                navLink: "/our-services",
+                newTab: true
+            },
+            {
+                navName: "About Us",
+                navLink: "/about-us",
+            },
+            {
+                navName: "Contact Us",
+                navLink: "/contact-us",
+            }
+        ]
     }
 }

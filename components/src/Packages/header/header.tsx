@@ -3,12 +3,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Hamburger from "hamburger-react";
 
+export interface headerNavProps {
+  navName?: string;
+  navLink?: string;
+  newTab?: boolean;
+}
 export interface headerProps {
   logoUrl?: string;
   logoAlt?: string;
+  navProps?: headerNavProps[];
 }
 
-const header: React.FunctionComponent<headerProps> = ({ logoUrl, logoAlt }) => {
+const header: React.FunctionComponent<headerProps> = ({
+  logoUrl,
+  logoAlt,
+  navProps,
+}) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -26,23 +36,17 @@ const header: React.FunctionComponent<headerProps> = ({ logoUrl, logoAlt }) => {
           isOpen ? "expanded" : "collapsed"
         }`}
       >
-        <ul>
-          <li>
-            <a href="" className="header-show_mobile_menu-nav">
-              test
+        {navProps?.map((item, index) => (
+          <li key={index}>
+            <a
+              href={item.navLink}
+              className="header-show_mobile_menu-nav"
+              target={item.newTab ? "_blank" : "_self"}
+            >
+              {item.navName}
             </a>
           </li>
-          <li>
-            <a href="" className="header-show_mobile_menu-nav">
-              test
-            </a>
-          </li>
-          <li>
-            <a href="" className="header-show_mobile_menu-nav">
-              test
-            </a>
-          </li>
-        </ul>
+        ))}
       </div>
     </Stylewrapper>
   );
