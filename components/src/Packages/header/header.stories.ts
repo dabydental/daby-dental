@@ -7,6 +7,7 @@ export default {
 
 export const Header = {
     args: {
-        buttonLabel: "test"
+        logoAlt: "Daby Dental",
+        logoUrl: "https://res.cloudinary.com/ddslirbcf/image/upload/v1750762721/Daby_dental_logo_centered_1_gbocaa.png"
     }
 }
