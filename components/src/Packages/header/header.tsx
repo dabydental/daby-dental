@@ -21,6 +21,24 @@ const header: React.FunctionComponent<headerProps> = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
 
+  const navMenus = () => {
+    return (
+      <ul>
+        {navProps?.map((item, index) => (
+          <li key={index}>
+            <a
+              href={item.navLink}
+              className="header-show_mobile_menu-nav"
+              target={item.newTab ? "_blank" : "_self"}
+            >
+              {item.navName}
+            </a>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <Stylewrapper className={`header-stylewrapper ${isOpen ? "opened" : ""}`}>
       <div className="header">
@@ -35,25 +53,14 @@ const header: React.FunctionComponent<headerProps> = ({
             label="Show menu"
           />
         </div>
+        <div className="header-show_desktop_menu">{navMenus()}</div>
       </div>
       <div
         className={`header-show_mobile_menu ${
           isOpen ? "expanded" : "collapsed"
         }`}
       >
-        <ul>
-          {navProps?.map((item, index) => (
-            <li key={index}>
-              <a
-                href={item.navLink}
-                className="header-show_mobile_menu-nav"
-                target={item.newTab ? "_blank" : "_self"}
-              >
-                {item.navName}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {navMenus()}
       </div>
     </Stylewrapper>
   );
@@ -87,19 +94,42 @@ const Stylewrapper = styled.div`
       li {
         padding-top: 20px;
       }
+    }
 
-      .header-show_mobile_menu-nav {
-        color: var(--white);
-        text-decoration: none;
-        font-size: 24px;
-        font-family: var(--font-daby-dental-disclaimer);
-        font-weight: 600;
-      }
+    .header-show_mobile_menu-nav {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 24px;
+      font-family: var(--font-daby-dental-disclaimer);
+      font-weight: 600;
     }
 
     .header-show_mobile_menu.expanded {
       max-height: 500px;
       padding-bottom: 30px;
+    }
+
+    .header-hamburger {
+      @media (min-width: 992px) {
+        display: none;
+      }
+    }
+
+    .header-show_desktop_menu {
+      display: none;
+      @media (min-width: 992px) {
+        display: block;
+
+        ul {
+          list-style: none;
+          display: flex;
+          text-decoration: none;
+        }
+
+        li {
+          padding: 0 10px;
+        }
+      }
     }
   }
 `;
