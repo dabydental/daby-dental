@@ -28,7 +28,12 @@ const header: React.FunctionComponent<headerProps> = ({
           <img src={logoUrl} alt={logoAlt} height="60px" />
         </div>
         <div className="header-hamburger ">
-          <Hamburger toggled={isOpen} toggle={setOpen} color="var(--white)" />
+          <Hamburger
+            toggled={isOpen}
+            toggle={setOpen}
+            color="var(--white)"
+            label="Show menu"
+          />
         </div>
       </div>
       <div
@@ -36,17 +41,19 @@ const header: React.FunctionComponent<headerProps> = ({
           isOpen ? "expanded" : "collapsed"
         }`}
       >
-        {navProps?.map((item, index) => (
-          <li key={index}>
-            <a
-              href={item.navLink}
-              className="header-show_mobile_menu-nav"
-              target={item.newTab ? "_blank" : "_self"}
-            >
-              {item.navName}
-            </a>
-          </li>
-        ))}
+        <ul>
+          {navProps?.map((item, index) => (
+            <li key={index}>
+              <a
+                href={item.navLink}
+                className="header-show_mobile_menu-nav"
+                target={item.newTab ? "_blank" : "_self"}
+              >
+                {item.navName}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </Stylewrapper>
   );
