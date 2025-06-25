@@ -11,9 +11,21 @@ export interface headerProps {
 const header: React.FunctionComponent<headerProps> = ({ logoUrl, logoAlt }) => {
   const [isOpen, setOpen] = useState(false);
 
-  const showMobileMenus = () => {
-    return (
-      <div className="header-show_mobile_menu">
+  return (
+    <Stylewrapper className={`header-stylewrapper ${isOpen ? "opened" : ""}`}>
+      <div className="header">
+        <div className="header-logo">
+          <img src={logoUrl} alt={logoAlt} height="60px" />
+        </div>
+        <div className="header-hamburger ">
+          <Hamburger toggled={isOpen} toggle={setOpen} color="var(--white)" />
+        </div>
+      </div>
+      <div
+        className={`header-show_mobile_menu ${
+          isOpen ? "expanded" : "collapsed"
+        }`}
+      >
         <ul>
           <li>
             <a href="" className="header-show_mobile_menu-nav">
@@ -32,20 +44,6 @@ const header: React.FunctionComponent<headerProps> = ({ logoUrl, logoAlt }) => {
           </li>
         </ul>
       </div>
-    );
-  };
-
-  return (
-    <Stylewrapper className={`header-stylewrapper ${isOpen ? "opened" : ""}`}>
-      <div className="header">
-        <div className="header-logo">
-          <img src={logoUrl} alt={logoAlt} height="60px" />
-        </div>
-        <div className="header-hamburger ">
-          <Hamburger toggled={isOpen} toggle={setOpen} color="var(--white)" />
-        </div>
-      </div>
-      {isOpen && showMobileMenus()}
     </Stylewrapper>
   );
 };
@@ -53,7 +51,7 @@ const header: React.FunctionComponent<headerProps> = ({ logoUrl, logoAlt }) => {
 const Stylewrapper = styled.div`
   &.header-stylewrapper {
     background-color: var(--black);
-    height: 100px;
+    height: auto;
     width: 100%;
     .header {
       display: flex;
@@ -64,10 +62,12 @@ const Stylewrapper = styled.div`
 
     .header-show_mobile_menu {
       background-color: var(--black);
-      height: auto;
+      overflow: hidden;
       width: 100%;
       text-align: center;
-      padding-bottom: 30px;
+      padding-bottom: 0;
+      max-height: 0;
+      transition: max-height 0.5s ease, padding 0.5s ease;
 
       ul {
         padding: unset;
@@ -85,10 +85,11 @@ const Stylewrapper = styled.div`
         font-weight: 600;
       }
     }
-  }
 
-  &.header-stylewrapper.opened {
-    height: 150px;
+    .header-show_mobile_menu.expanded {
+      max-height: 500px;
+      padding-bottom: 30px;
+    }
   }
 `;
 
