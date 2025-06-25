@@ -94,6 +94,10 @@ const Stylewrapper = styled.div`
       li {
         padding-top: 20px;
       }
+
+      @media (min-width: 992px) {
+        display: none;
+      }
     }
 
     .header-show_mobile_menu-nav {
