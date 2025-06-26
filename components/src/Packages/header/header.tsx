@@ -28,7 +28,7 @@ const header: React.FunctionComponent<headerProps> = ({
           <li key={index}>
             <a
               href={item.navLink}
-              className="header-show_mobile_menu-nav"
+              className="header-menu-nav"
               target={item.newTab ? "_blank" : "_self"}
             >
               {item.navName}
@@ -100,10 +100,10 @@ const Stylewrapper = styled.div`
       }
     }
 
-    .header-show_mobile_menu-nav {
+    .header-menu-nav {
       color: var(--white);
       text-decoration: none;
-      font-size: 24px;
+      font-size: 20px;
       font-family: var(--font-daby-dental-disclaimer);
       font-weight: 600;
     }
