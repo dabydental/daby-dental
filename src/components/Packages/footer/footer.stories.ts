@@ -1,11 +1,11 @@
-import { footer } from "./footer";
+import { Footer } from "./footer";
 
 export default {
     title: "Components/Footer",
-    component: footer,
+    component: Footer,
 }
 
-export const Footer = {
+export const footer = {
     args: {
         logoAlt: "Daby Dental",
         logoUrl: "https://res.cloudinary.com/ddslirbcf/image/upload/v1750762721/Daby_dental_logo_centered_1_gbocaa.png",

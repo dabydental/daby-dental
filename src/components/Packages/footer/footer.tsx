@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styled from "styled-components";
 import { instagramIcon } from "../../../../public/assets/instagram_logo";
@@ -16,7 +17,7 @@ export interface footerProps {
   copyright?: string;
 }
 
-const footer: React.FunctionComponent<footerProps> = ({
+const Footer: React.FunctionComponent<footerProps> = ({
   logoAlt,
   logoUrl,
   location,
@@ -54,8 +55,8 @@ const footer: React.FunctionComponent<footerProps> = ({
         </div>
 
         <div className="footer-location">
-          {location?.map((item) => (
-            <div className="footer-location-info">
+          {location?.map((item, key) => (
+            <div className="footer-location-info" key={key}>
               <h3>{item?.city}</h3>
               <p>
                 {item?.street?.includes(",")
@@ -151,4 +152,4 @@ const Stylewrapper = styled.div`
   }
 `;
 
-export { footer };
+export { Footer };

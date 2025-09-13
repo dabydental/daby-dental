@@ -14,7 +14,7 @@ export interface headerProps {
   navProps?: headerNavProps[];
 }
 
-const header: React.FunctionComponent<headerProps> = ({
+const Header: React.FunctionComponent<headerProps> = ({
   logoUrl,
   logoAlt,
   navProps,
@@ -104,7 +104,7 @@ const Stylewrapper = styled.div`
       color: var(--white);
       text-decoration: none;
       font-size: 20px;
-      font-family: var(--font-daby-dental-disclaimer);
+      font-family: var(--font-daby-dental-info);
       font-weight: 600;
     }
 
@@ -138,4 +138,4 @@ const Stylewrapper = styled.div`
   }
 `;
 
-export { header };
+export { Header };
