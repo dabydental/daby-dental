@@ -1,8 +1,8 @@
 /** @type { import('@storybook/react').Preview } */
-import '../public/styles/typography.css'
-import { FontStyles } from "../public/styles/fontStyles";
+import '../src/styles/typography.css'
+import { FontStyles } from "../src/styles/fontStyles";
 import { createGlobalStyle } from "styled-components";
-import { color } from "../public/styles/color";
+import { color } from "../src/styles/color";
 
 const preview = {
   parameters: {

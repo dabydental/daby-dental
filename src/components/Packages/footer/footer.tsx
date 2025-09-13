@@ -31,17 +31,25 @@ const footer: React.FunctionComponent<footerProps> = ({
       <div className="footer-contents">
         <div className="footer-socialmedia">
           <div className="footer-socialmedia-facebook">
-            <a href="https://www.facebook.com/share/1AA1NKzBnz/?mibextid=wwXIfr">
+            <a
+              href="https://www.facebook.com/share/1AA1NKzBnz/?mibextid=wwXIfr"
+              aria-label="facebook"
+            >
               {facebookIcon()}
             </a>
           </div>
           <div className="footer-socialmedia-instagram">
-            <a href="https://www.instagram.com/daby.dental?igsh=ZTRraHRwYmM2bHZn">
+            <a
+              href="https://www.instagram.com/daby.dental?igsh=ZTRraHRwYmM2bHZn"
+              aria-label="instagram"
+            >
               {instagramIcon()}
             </a>
           </div>
           <div className="footer-socialmedia-whatsapp">
-            <a href="https://wa.me/+23057600232">{whatsappIcon()}</a>
+            <a href="https://wa.me/+23057600232" aria-label="whatsapp">
+              {whatsappIcon()}
+            </a>
           </div>
         </div>
 

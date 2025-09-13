@@ -1,4 +1,4 @@
-import { CustomButton } from "../button/button";
+import { CustomButton } from "./button";
 
 export default {
     title: "Components/Button",
