@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { instagramIcon } from "../../assets/instagram_logo";
-import { facebookIcon } from "../../assets/facebook_logo";
-import { whatsappIcon } from "../../assets/whatsapp_logo";
+import { instagramIcon } from "../../../../public/assets/instagram_logo";
+import { facebookIcon } from "../../../../public/assets/facebook_logo";
+import { whatsappIcon } from "../../../../public/assets/whatsapp_logo";
 
 export interface locationProps {
   city?: string;
