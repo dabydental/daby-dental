@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import styled from "styled-components";
 const NotFound = () => {
   return (
@@ -6,7 +7,7 @@ const NotFound = () => {
       <div>
         <h1>404 - Page Not Found</h1>
         <p>The page you are looking for does not exist.</p>
-        <a href="/">Go back to Home</a>
+        <Link href="/">Go back to Home</Link>
       </div>
     </Stylewrapper>
   );
